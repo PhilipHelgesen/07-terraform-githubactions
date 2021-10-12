@@ -17,7 +17,7 @@ I denne øvingen skal du øve på
 
 ![Alt text](img/0.png "1")
 
-* Gå til tjenesten IAM og finn din *egen bruker* (please)
+* Gå til tjenesten IAM og finn din *egen bruker*
 
 ![Alt text](img/1.png "2")
 
