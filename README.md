@@ -60,11 +60,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8iEq3aeSASyClMtpbjG4EUoCfmNeUr/QdJaNW7JU3
 
 * Under "ssh & gpg keys" velg "new SSH key")
 
-![Alt text](img/4.png "3")
+* ![Alt text](img/5.png "3")
 
 * lagre den for eksempel under navnet "cloud 9"
-![Alt text](img/5.png "3")
-
 
 ## Legg til Github repository secrets
 
