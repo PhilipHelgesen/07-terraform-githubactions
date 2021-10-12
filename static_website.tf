@@ -5,4 +5,5 @@ module "static-site" {
   hosted_zone_name  = "thecloudcollege.com"
   name_prefix       = "glenn"
   site_name         = "glenn.thecloudcollege.com"
+  bucket_name       = "bechgle.thecloudcollege.com"
 }
