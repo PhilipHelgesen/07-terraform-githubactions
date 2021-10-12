@@ -7,6 +7,7 @@ resource "aws_cloud9_environment_ec2" "cloud_9_env" {
   instance_type = var.instance_type
   name          = var.student_id
   owner_arn     = aws_iam_user.student.arn
+  automatic_stop_time_minutes = 30
 }
 
 data "aws_instance" "cloud9_instance" {

@@ -34,17 +34,40 @@ I denne øvingen skal du øve på
 
 Noter Access Key ID og Secret Access Key. Disse skal legges inn som Repo secrets i neste steg
 
-## Autentiser 
+## Autentiser Cloud9 mot GitHib 
 
+Istedet for å oppgi brukernavn og passord hver gang man skal pushe kode til bitbucket, er det bedre å klone med  
+ssh, og bruke nøkler for å autentisere seg 
+
+For å sette dette opp på Cloud9 må man kjøre følgende kommandoer 
+
+```shell
+ssh-keygen -t rsa -C "your@email.com" 
+```
+Aksepter alle default valg (trykk enter for alle svar-alternativer
+```shell
+cat ~/.ssh/id_rsa.pub
+```
+
+Filen kan for eksempel se slik ut ; 
+
+```shell
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8iEq3aeSASyClMtpbjG4EUoCfmNeUr/QdJaNW7JU3FYvXs4VStclBkhx2OE1+U1yCA1+VzGAotsEhtELoahH7X41i5lyoHwM4uhsi1A940Pv537ty+9ljAlKBHPQ2wZrq/Oj7Ql5a5SFtu3j7KRrPxtn3CdzUFOTrJDGtZcMFrtAXgORoasyEZ4oacFjEyd8T9bb8zPs5gO2tNyhW1s8lNc3JvE+l6+psRMe2HVruMf6e4F1n+3dYPGicnernyBLrhEWU0wV2QM5uLWnweOy4OKs89ruGbIHEn8KYkKe/8xTqTWZLZjPw4hv5I6DS3NfyZXsW7/QkLKtd/7SL4Emd your@email.com
+```
+
+Kopier verdien og legge denne underGitHub brukeren din som en nøkkel (settings/ssh & gpg keys/new SSH key), 
+![Alt text](img/3.png "3")
+![Alt text](img/4.png "3")
+lagre den for eksempel under navnet "cloud 9"
+![Alt text](img/5.png "3")
 
 
 ## Legg til Github repository secrets
 
 * Lag en fork av dette repoet
-* Sjekk ut din fork i Cloud9 miljøet ditt med "git clone ...."
-* Legg til "repository secrets". Verdiene fikk du i steget over. Dette gjorde vi også i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
-
-
+* Sjekk ut din fork i Cloud9 miljøet ditt med "git clone ...." *NB* Bruk SSH URL når du sjekker ut
+  ![Alt text](img/6.png "3")
+* Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
 ## Oppgave 1
 
@@ -54,7 +77,6 @@ I provider.tf har vi en Backend for Terraform sin state basert på S3.
 
 * State - mekanismen som Terraform bruker for koble infra-kode til faktisk infrastruktur 
 * Backend. En lagringsplass for state filen. Hvis du ikke har noen backend konfigurasjon får du en .tfstate fil på maskinen din.
-
 * I denne filen må må du endre på stien til terraform state filen, og bruke ditt unike filnavn, for eksempel min (glenn)
 
 ```hcl
@@ -168,3 +190,10 @@ Fordelen med Terraformmoduler er at vi kan komme raskt i gang uten nødvemdigvis
 
 Følg tutorial for hvordan dere kan lage egne terraform moduler; https://learn.hashicorp.com/tutorials/terraform/module-create
 
+# Problemløsning 
+
+
+
+* IAM rettigheter
+* Bucket chicken & egg 
+* Github token ved push av kode er tunngvindt
