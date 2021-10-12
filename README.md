@@ -30,7 +30,7 @@ Noter Access Key ID og Secret Access Key. Disse skal legges inn som Repo secrets
 ## Autentiser Cloud9 mot GitHub 
 
 Istedet for å oppgi brukernavn og passord hver gang man skal pushe kode til bitbucket, er det bedre å klone med  
-ssh, og bruke nøkler for å autentisere seg 
+ssh, og bruke nøkler for å autentisering
 
 For å sette dette opp på Cloud9 må man kjøre følgende kommandoer 
 
