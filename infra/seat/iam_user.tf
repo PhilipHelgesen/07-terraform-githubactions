@@ -26,8 +26,11 @@ resource "aws_iam_user_policy" "student_policy" {
         "ecs:*",
         "apprunner:*",
         "logs:*",
+        "route53:*",
         "iam:*",
+        "acm:*",
         "ecr:*",
+        "cloudfront:*",
         "cloud9:*",
         "ec2:*"
       ],
@@ -39,7 +42,7 @@ resource "aws_iam_user_policy" "student_policy" {
         "s3:*"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::bucket_name/${var.student_id}/*"
+      "Resource": "*"
     }
   ]
 }
