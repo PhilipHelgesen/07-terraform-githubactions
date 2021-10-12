@@ -54,21 +54,31 @@ Filen kan for eksempel se slik ut ;
 ```shell
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8iEq3aeSASyClMtpbjG4EUoCfmNeUr/QdJaNW7JU3FYvXs4VStclBkhx2OE1+U1yCA1+VzGAotsEhtELoahH7X41i5lyoHwM4uhsi1A940Pv537ty+9ljAlKBHPQ2wZrq/Oj7Ql5a5SFtu3j7KRrPxtn3CdzUFOTrJDGtZcMFrtAXgORoasyEZ4oacFjEyd8T9bb8zPs5gO2tNyhW1s8lNc3JvE+l6+psRMe2HVruMf6e4F1n+3dYPGicnernyBLrhEWU0wV2QM5uLWnweOy4OKs89ruGbIHEn8KYkKe/8xTqTWZLZjPw4hv5I6DS3NfyZXsW7/QkLKtd/7SL4Emd your@email.com
 ```
+Kopier verdien. "Settings" for din bruker  
 
-* Kopier verdien og gå til settings under din bruker  
-![Alt text](img/3.png "3")
+### Under "ssh & gpg keys" velg "new SSH key")
 
-* Under "ssh & gpg keys" velg "new SSH key")
+![Alt text](img/4.png "3")
 
-* ![Alt text](img/5.png "3")
+### lagre den for eksempel under navnet "cloud 9"
 
-* lagre den for eksempel under navnet "cloud 9"
+![Alt text](img/5.png "3")
+
+Konfigurerer Git 
+
+```shell
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+```
+Du skal nå kunne klone, og pushe commits fra ditt cloud9 miljø
 
 ## Legg til Github repository secrets
 
-* Lag en fork av dette repoet
+* Lag en fork av dette repoet.
 * Sjekk ut din fork i Cloud9 miljøet ditt med "git clone ...." *NB* Bruk SSH URL når du sjekker ut
-  ![Alt text](img/6.png "3")
+
+![Alt text](img/6.png "3")
+
 * Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
 ## Oppgave 1
