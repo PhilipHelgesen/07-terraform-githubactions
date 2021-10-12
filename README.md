@@ -1,5 +1,12 @@
 # Webapp og infrastruktur med React, Terraform og Open Source moduler
 
+## 
+
+- sjekker inn .terraform katalogen
+- ikke save coud9 
+- 
+
+
 I denne øvingen skal du øve på 
 
 * Mer avansert Github actions. For eksempel; Flere jobber og avhengigheter mellom jobber
@@ -53,6 +60,7 @@ Kopier verdien og legge denne underGitHub brukeren din som en nøkkel (settings/
 ![Alt text](img/4.png "3")
 lagre den for eksempel under navnet "cloud 9"
 ![Alt text](img/5.png "3")
+
 
 ## Legg til Github repository secrets
 
