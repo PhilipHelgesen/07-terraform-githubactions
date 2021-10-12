@@ -1,12 +1,5 @@
 # Webapp og infrastruktur med React, Terraform og Open Source moduler
 
-## 
-
-- sjekker inn .terraform katalogen
-- ikke save coud9 
-- 
-
-
 I denne øvingen skal du øve på 
 
 * Mer avansert Github actions. For eksempel; Flere jobber og avhengigheter mellom jobber
