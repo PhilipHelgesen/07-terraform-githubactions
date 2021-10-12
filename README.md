@@ -27,7 +27,7 @@ I denne øvingen skal du øve på
 
 Noter Access Key ID og Secret Access Key. Disse skal legges inn som Repo secrets i neste steg
 
-## Autentiser Cloud9 mot GitHib 
+## Autentiser Cloud9 mot GitHub 
 
 Istedet for å oppgi brukernavn og passord hver gang man skal pushe kode til bitbucket, er det bedre å klone med  
 ssh, og bruke nøkler for å autentisere seg 
