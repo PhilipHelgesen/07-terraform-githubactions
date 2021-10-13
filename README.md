@@ -74,15 +74,9 @@ Du skal nå kunne klone, og pushe commits fra ditt cloud9 miljø
 
 * Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
-## Oppgave 1
+## Oppgave 1 - Fjern hard-kodinger i filene
 
-I provider.tf har vi en Backend for Terraform sin state basert på S3. 
-
-### Husk
-
-* State - mekanismen som Terraform bruker for koble infra-kode til faktisk infrastruktur 
-* Backend. En lagringsplass for state filen. Hvis du ikke har noen backend konfigurasjon får du en .tfstate fil på maskinen din.
-* I denne filen må må du endre på stien til terraform state filen, og bruke ditt unike filnavn, for eksempel min (glenn)
+I provider.tf har vi en Backend for Terraform sin state basert på S3. Du må her erstatte "glenn" med ditt eget studentnavn
 
 ```hcl
   backend "s3" {
@@ -91,27 +85,38 @@ I provider.tf har vi en Backend for Terraform sin state basert på S3.
     region = "eu-north-1"
   }
 ```
+
 ## Oppgave 2
 
 Lag en variables.tf i rotkatalogen, og fjern hardkodingen av "glenn" i static_website.tf filen. Det er ikke god praksis å hardkode
 verdier ("glenn") på denne måten. - https://www.terraform.io/docs/language/values/variables.html
 
-Legg også spesielt merke til hvordan vi referer til moduler på en veldig "kort form" når de finnes i Terraform registry (https://registry.terraform.io/)
+Legg også spesielt merke til hvordan vi referer til modulernår de finnes i Terraform registry (https://registry.terraform.io/)
 
 ```hcl
 module "static-site" {
     source  = "telia-oss/static-site/aws"
-    version = "3.0.0"
+    version = "3.1.0"
     
     hosted_zone_name = "thecloudcollege.com"
     name_prefix      = "glenn"
     site_name        = "glenn.thecloudcollege.com"
+    bucket_name      = "glenn.thecloudcollege.com"
 }
 ```
 
-## Oppgave 3 
+## Oppgave 2 
 
-Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø. Vi skal se litt nærmere på denne filen, her er det ganske mye nytt
+Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø. Du må endre på bucket navn. Filene som lages av ```npm run build``` prosessen må kopieres til AWS.
+
+Du må endre på denne delen og erstatte bucket ```bechgle.thecloudcollege.com``` med ditt eget bucket navn som du satt i static_website.tf
+
+```yaml
+- run: aws s3 cp build s3://bechgle.thecloudcollege.com --recursive --region eu-north-1
+  working-directory: ./demo-app 
+```
+
+### Gjennomgang av Pipeline.yaml
 
 Vi sette miljøvariabler på denne måten slik at terraform har tilgang til AWS nøkler, og har de rettighetene som er nødvendig. 
 
@@ -191,14 +196,11 @@ student_webapp:
 For en grundig gjennomgang av hva som skjer i kulissene her; sjekk gjerne ut denne; https://medium.com/@p_stotz/static-website-hosting-leverage-aws-s3-with-cloudfront-route53-acm-and-lambda-edge-8c781bc3b390
 Fordelen med Terraformmoduler er at vi kan komme raskt i gang uten nødvemdigvis å kunne alle detaljene. 
 
+# Test løsningen i nettleser
+
+* Gratulerer! Du har nå publisert din egent React.js web app på AWS. I nettleser kan du nå skrive https.//<studentnavn>.thecloudcollege.com 
+* Prøv å endre på Javascript filene, følg med på pipeline i "actions" i GitHub, og se at endringene kommer ut. 
+
 # Ekstra 
 
 Følg tutorial for hvordan dere kan lage egne terraform moduler; https://learn.hashicorp.com/tutorials/terraform/module-create
-
-# Problemløsning 
-
-
-
-* IAM rettigheter
-* Bucket chicken & egg 
-* Github token ved push av kode er tunngvindt
