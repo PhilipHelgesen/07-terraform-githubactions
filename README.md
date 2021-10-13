@@ -74,6 +74,13 @@ Du skal nå kunne klone, og pushe commits fra ditt cloud9 miljø
 
 * Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
+## Slå på GitHub actions for din fork 
+
+I din fork av dette repositoriet, velg "actions" for å slå på støtte for GitHub actions i din fork.
+
+![Alt text](img/7.png "3")
+
+
 ## Oppgave 1 - Fjern hard-kodinger i terraformkode
 
 I provider.tf har vi en Backend for Terraform sin state basert på S3. Du må her erstatte "glenn" med ditt eget studentnavn
