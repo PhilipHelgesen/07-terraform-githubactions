@@ -1,6 +1,7 @@
 module "static-site" {
-  source            = "github.com/telia-oss/terraform-aws-static-site?ref=31db0be0ccc25de0750557230560d4be7c96779a"
-  bucket_versioning = true
+  source            = "telia-oss/static-site/aws"
+  version           = "3.1.0"
+  bucket_versioning = false
   hosted_zone_name  = "thecloudcollege.com"
   name_prefix       = "glenn"
   site_name         = "glenn.thecloudcollege.com"
