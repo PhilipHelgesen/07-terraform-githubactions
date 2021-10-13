@@ -72,9 +72,9 @@ Du skal nå kunne klone, og pushe commits fra ditt cloud9 miljø
 
 ![Alt text](img/6.png "3")
 
-* Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
+* Legg til "repository secrets" for AWS_ACCESS_KEY_ID og AWS_SECRET_ACCESS_KEY. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
-## Oppgave 1
+## Oppgave 1 - Fjerne hardkoding av "glenn" i static_website.tf
 
 I provider.tf har vi en Backend for Terraform sin state basert på S3. 
 
@@ -94,14 +94,16 @@ I provider.tf har vi en Backend for Terraform sin state basert på S3.
 ## Oppgave 2
 
 Lag en variables.tf i rotkatalogen, og fjern hardkodingen av "glenn" i static_website.tf filen. Det er ikke god praksis å hardkode
-verdier ("glenn") på denne måten. - https://www.terraform.io/docs/language/values/variables.html
+verdier ("glenn") på denne måten. 
 
-Legg også spesielt merke til hvordan vi referer til moduler på en veldig "kort form" når de finnes i Terraform registry (https://registry.terraform.io/)
+For informasjon om hvordan du bruker variabler, se her https://www.terraform.io/docs/language/values/variables.html
+
+Legg også spesielt merke til hvordan vi referer til moduler når de finnes i Terraform registry (https://registry.terraform.io/)
 
 ```hcl
 module "static-site" {
     source  = "telia-oss/static-site/aws"
-    version = "3.0.0"
+    version = "3.1.0"
     
     hosted_zone_name = "thecloudcollege.com"
     name_prefix      = "glenn"
@@ -109,7 +111,7 @@ module "static-site" {
 }
 ```
 
-## Oppgave 3 
+## Oppgave 2 
 
 Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø. Vi skal se litt nærmere på denne filen, her er det ganske mye nytt
 
