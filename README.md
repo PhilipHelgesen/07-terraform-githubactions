@@ -25,7 +25,7 @@ I denne øvingen skal du øve på
 
 ![Alt text](img/2.png "3")
 
-Noter Access Key ID og Secret Access Key. Disse skal legges inn som Repo secrets i neste steg
+Noter Access Key ID og Secret Access Key. Disse skal legges inn som Repo secrets i et senere steg!
 
 ## Autentiser Cloud9 mot GitHub 
 
