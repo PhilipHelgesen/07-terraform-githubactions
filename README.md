@@ -86,8 +86,6 @@ I provider.tf har vi en Backend for Terraform sin state basert på S3. Du må he
   }
 ```
 
-## Oppgave 2
-
 Lag en variables.tf i rotkatalogen, og fjern hardkodingen av "glenn" i static_website.tf filen. Det er ikke god praksis å hardkode
 verdier ("glenn") på denne måten. - https://www.terraform.io/docs/language/values/variables.html
 
