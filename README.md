@@ -117,10 +117,11 @@ module "static-site" {
 }
 ```
 
-## Oppgave 2 - fjern hardkoding i pipelinekode
+## Oppgave 2 - endre pipelinekode
 
-Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø. Du må endre på bucket navn. Filene som lages av ```npm run build``` prosessen må kopieres til AWS.
+Vi skal senere se på hvordan vi kan unngå å hardkode "glenn" osv i pipelinekoden.
 
+Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø.  
 Du må endre på denne delen og erstatte bucket ```bechgle.thecloudcollege.com``` med ditt eget bucket navn som du satt i static_website.tf
 
 ```yaml
