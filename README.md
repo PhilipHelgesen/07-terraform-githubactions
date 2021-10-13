@@ -74,7 +74,7 @@ Du skal nå kunne klone, og pushe commits fra ditt cloud9 miljø
 
 * Legg til "repository secrets", verdier gis i klasserommet. Dette gjorde vi i øving 5. Hvis du trenger repetisjon, sjekk her; <https://github.com/PGR301-2021/05-cd-apprunner-with-docker#gi-github-actions-tilgang-til-n%C3%B8kler>
 
-## Oppgave 1 - Fjern hard-kodinger i filene
+## Oppgave 1 - Fjern hard-kodinger i terraformkode
 
 I provider.tf har vi en Backend for Terraform sin state basert på S3. Du må her erstatte "glenn" med ditt eget studentnavn
 
@@ -103,7 +103,7 @@ module "static-site" {
 }
 ```
 
-## Oppgave 2 
+## Oppgave 2 - fjern hardkoding i pipelinekode
 
 Modifiser filen ```.github/workflows/pipeline.yaml``` og tilpass denne ditt eget miljø. Du må endre på bucket navn. Filene som lages av ```npm run build``` prosessen må kopieres til AWS.
 
