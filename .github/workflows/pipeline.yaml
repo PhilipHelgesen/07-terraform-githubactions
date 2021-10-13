@@ -87,5 +87,5 @@ jobs:
         working-directory: ./demo-app
       - run: npm run build
         working-directory: ./demo-app
-      - run: aws s3 cp build s3://bechgle2.thecloudcollege.com --recursive --region eu-north-1
+      - run: aws s3 cp build s3://glenn.thecloudcollege.com --recursive --region eu-north-1
         working-directory: ./demo-app 
