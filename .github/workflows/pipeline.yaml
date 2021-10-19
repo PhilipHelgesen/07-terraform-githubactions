@@ -88,8 +88,5 @@ jobs:
       - run: npm run build
         working-directory: ./demo-app
       - run: aws s3 cp build s3://phhe002.thecloudcollege.com --recursive --region eu-north-1
-<<<<<<< HEAD
         working-directory: ./demo-app 
-=======
-        working-directory: ./demo-app 
->>>>>>> 1867bc5cb58243426dbe21e1866b9b757374fb87
+
